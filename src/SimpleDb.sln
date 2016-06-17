@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDb", "SimpleDb\SimpleDb.csproj", "{F4D61E9F-2B95-4579-8322-0309B998D066}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDb.Web", "SimpleDb.Web\SimpleDb.Web.csproj", "{F4D61E9F-2B95-4579-8322-0309B998D066}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SimpleDb.Database", "SimpleDb.Database\SimpleDb.Database.sqlproj", "{238561F9-6D07-476E-A431-DCE2CAA3D556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDb.DataAccess", "SimpleDb.DataAccess\SimpleDb.DataAccess.csproj", "{52E1FBF5-22B9-4A02-8565-8E56C7A8B3EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{238561F9-6D07-476E-A431-DCE2CAA3D556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{238561F9-6D07-476E-A431-DCE2CAA3D556}.Release|Any CPU.Build.0 = Release|Any CPU
 		{238561F9-6D07-476E-A431-DCE2CAA3D556}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{52E1FBF5-22B9-4A02-8565-8E56C7A8B3EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E1FBF5-22B9-4A02-8565-8E56C7A8B3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E1FBF5-22B9-4A02-8565-8E56C7A8B3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E1FBF5-22B9-4A02-8565-8E56C7A8B3EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

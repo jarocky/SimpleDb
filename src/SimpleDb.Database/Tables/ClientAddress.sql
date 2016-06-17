@@ -10,4 +10,5 @@ go
 
 alter table ClientAddress add constraint PK_ClientAddress_ClientSymbol primary key (ClientSymbol)
 go
-
+alter table ClientAddress add constraint FK_ClientAddress_ClientSymbol foreign key (ClientSymbol) references Client (Symbol)
+go

@@ -1,0 +1,65 @@
+﻿@model List<SimpleDb.Models.ClientWithAddress>
+
+@{
+  ViewBag.Title = "Klienci";
+}
+
+<h2>Klienci</h2>
+
+<section id="control">
+  <p>
+    <a href="/Client/Add" class="btn btn-warning">
+      Dodaj klienta
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+    </a>
+  </p>
+
+</section>
+
+<section id="data">
+  <table class="table">
+    <tr>
+      <th>Symbol klienta</th>
+      <th>Nazwa</th>
+      <th>Email</th>
+      <th>Telefon</th>
+      <th>Ulica</th>
+      <th>Numer</th>
+      <th>Kod pocztowy</th>
+      <th></th>
+      <th></th>
+    </tr>
+    @foreach (var client in Model)
+      {
+      <tr>
+        <td>
+          @client.Symbol
+        </td>
+        <td>
+          @client.Name
+        </td>
+        <td class="center">
+          @client.Email
+        </td>
+        <td class="center">
+          @client.PhoneNumber
+        </td>
+        <td>
+          @client.Street
+        </td>
+        <td>
+          @client.Number
+        </td>
+        <td>
+          @client.ZipCode
+        </td>
+        <td>
+          <a href="/Client/Edit?symbol=@client.Symbol" class="btn btn-warning">
+            Edycja klienta
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          </a>
+        </td>
+      </tr>
+    }
+  </table>
+</section>
