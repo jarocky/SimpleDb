@@ -9,7 +9,7 @@ namespace SimpleDb.Controllers
 {
   public class ClientsController : Controller
   {
-    // GET: Clients
+    [HttpGet]
     public ActionResult Index()
     {
       List<Client> clients = null;

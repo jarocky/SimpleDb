@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace SimpleDb.Controllers
 {
-    public class HomeController : Controller
+  public class HomeController : Controller
+  {
+    [HttpGet]
+    public ActionResult Index()
     {
-        // GET: Home
-        public ActionResult Index()
-        {
-            return View();
-        }
+      return View();
     }
+  }
 }
