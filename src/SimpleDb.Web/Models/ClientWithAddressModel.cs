@@ -2,7 +2,7 @@
 
 namespace SimpleDb.Models
 {
-  public class ClientWithAddress
+  public class ClientWithAddressModel
   {
     public string Symbol { get; set; }
 

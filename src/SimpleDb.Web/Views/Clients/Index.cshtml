@@ -1,4 +1,4 @@
-﻿@model List<SimpleDb.Models.ClientWithAddress>
+﻿@model List<SimpleDb.Models.ClientWithAddressModel>
 
 @{
   ViewBag.Title = "Klienci";
@@ -26,7 +26,6 @@
       <th>Ulica</th>
       <th>Numer</th>
       <th>Kod pocztowy</th>
-      <th></th>
       <th></th>
     </tr>
     @foreach (var client in Model)

@@ -22,7 +22,7 @@ namespace SimpleDb.Controllers
 
       var clientsWithAddresQuery = from c in clients
         join a in addresses on c.Symbol equals a.ClientSymbol
-        select new ClientWithAddress
+        select new ClientWithAddressModel
         {
           Symbol = c.Symbol,
           Name = c.Name,

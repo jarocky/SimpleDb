@@ -15,7 +15,7 @@ namespace SimpleDb.Controllers
     }
 
     [HttpPost]
-    public ActionResult Adding(ClientWithAddress clientWithAddres)
+    public ActionResult Adding(ClientWithAddressModel clientWithAddres)
     {
       var client = new Client
       {
@@ -57,7 +57,7 @@ namespace SimpleDb.Controllers
         address = ctx.ClientAddresses.SingleOrDefault(x => x.ClientSymbol == symbol);
       }
 
-      var clientWithAddress = new ClientWithAddress
+      var clientWithAddress = new ClientWithAddressModel
       {
         Symbol = client.Symbol,
         Name = client.Name,
@@ -74,7 +74,7 @@ namespace SimpleDb.Controllers
     }
 
     [HttpPost]
-    public ActionResult Editing(ClientWithAddress clientWithAddres)
+    public ActionResult Editing(ClientWithAddressModel clientWithAddres)
     {
       using (var ctx = new ResuestServiceContext())
       {

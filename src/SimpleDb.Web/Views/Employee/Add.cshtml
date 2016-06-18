@@ -1,0 +1,47 @@
+﻿@model SimpleDb.Models.EmployeeModel
+
+@{
+  ViewBag.Title = "Dodaj pracownika";
+}
+
+<h2>Dodaj pracownika</h2>
+
+
+@using (Html.BeginForm("Adding", "Employee"))
+{
+  @Html.AntiForgeryToken()
+
+  <div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+      <label class="control-label col-md-2">Imię</label>
+      <div class="col-md-10">
+        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2">Nazwisko</label>
+      <div class="col-md-10">
+        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Dodaj" class="btn btn-default" />
+      </div>
+    </div>
+  </div>
+}
+
+<div>
+  @Html.ActionLink("Wróć do listy", "Index", "Employees")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

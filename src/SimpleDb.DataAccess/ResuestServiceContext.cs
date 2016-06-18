@@ -14,6 +14,8 @@ namespace SimpleDb.DataAccess
 
     public DbSet<ClientAddress> ClientAddresses { get; set; }
 
+    public DbSet<Employee> Employees { get; set; }
+
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
       modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

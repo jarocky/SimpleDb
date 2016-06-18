@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enities\Employee.cs" />
     <Compile Include="ResuestServiceContext.cs" />
     <Compile Include="Enities\Client.cs" />
     <Compile Include="Enities\ClientAddress.cs" />

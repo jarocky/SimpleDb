@@ -1,0 +1,48 @@
+﻿@model List<SimpleDb.Models.EmployeeModel>
+
+@{
+  ViewBag.Title = "Pracownicy";
+}
+
+<h2>Pracownicy</h2>
+
+<section id="control">
+  <p>
+    <a href="/Employee/Add" class="btn btn-warning">
+      Dodaj pracownika
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+    </a>
+  </p>
+
+</section>
+
+<section id="data">
+  <table class="table">
+    <tr>
+      <th>Identyfikator</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th></th>
+    </tr>
+    @foreach (var employee in Model)
+      {
+      <tr>
+        <td>
+          @employee.Identifier.ToString("N").ToUpper()
+        </td>
+        <td>
+          @employee.FirstName
+        </td>
+        <td>
+          @employee.LastName
+        </td>
+        <td>
+          <a href="/Employee/Edit?identifier=@employee.Identifier" class="btn btn-warning">
+            Edycja pracownika
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          </a>
+        </td>
+      </tr>
+    }
+  </table>
+</section>
