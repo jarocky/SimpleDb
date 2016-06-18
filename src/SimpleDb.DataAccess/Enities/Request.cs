@@ -18,7 +18,7 @@ namespace SimpleDb.DataAccess.Enities
 
     public DateTime Date { get; set; }
 
-    public DateTime ResolveDate { get; set; }
+    public DateTime? ResolveDate { get; set; }
 
     public string ResolveDescription { get; set; }
 

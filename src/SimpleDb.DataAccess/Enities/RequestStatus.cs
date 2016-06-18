@@ -2,9 +2,8 @@
 {
   public enum RequestStatus
   {
-    NotSet,
-    New,
-    InProgress,
-    Resolved
+    Nowy = 1,
+    Otwarty = 2,
+    Zamkniety = 3
   }
 }

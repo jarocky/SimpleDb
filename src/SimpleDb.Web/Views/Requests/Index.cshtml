@@ -10,7 +10,8 @@
   <table class="table">
     <tr>
       <th>Identyfikator</th>
-      <th>Data</th>
+      <th>Nazwa klienta</th>
+      <th>Data zgłoszenia</th>
       <th>Priorytet</th>
       <th>Rodzaj</th>
       <th>Status</th>
@@ -22,6 +23,9 @@
       <tr>
         <td>
           @request.Identifier.ToString("N").ToUpper()
+        </td>
+        <td>
+          @request.ClientName
         </td>
         <td>
           @request.Date

@@ -2,9 +2,8 @@
 {
   public enum RequestType
   {
-    NotSet,
-    Change,
-    Bug,
-    Critical
+    Pytanie = 1,
+    Problem = 2,
+    Awaria = 3
   }
 }

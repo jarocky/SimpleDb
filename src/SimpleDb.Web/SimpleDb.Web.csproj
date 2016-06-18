@@ -122,12 +122,14 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ClientWithAddressModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\RequestAdd.cs" />
     <Compile Include="Models\RequestForList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -148,6 +150,7 @@
     <Content Include="Views\Employee\Add.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Requests\Index.cshtml" />
+    <Content Include="Views\Request\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

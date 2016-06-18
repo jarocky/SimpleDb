@@ -3,9 +3,8 @@
 {
   public enum RequestPriority
   {
-    NotSet,
-    Low,
-    Medium,
-    High 
+    Niski = 1,
+    Wysoki = 2,
+    Krytyczny = 3 
   }
 }

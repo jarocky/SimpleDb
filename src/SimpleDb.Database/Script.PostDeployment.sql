@@ -14,9 +14,9 @@ merge [dbo].[RequestPriority] as target
   using 
     ( 
       values     
-      ( 1, N'Low' ),
-      ( 2, N'Medium' ),
-      ( 3, N'High' )
+      ( 1, N'Niski' ),
+      ( 2, N'Wysoki' ),
+      ( 3, N'Krytyczny' )
     )
     as source (Id, Name)
   on (target.[Id] = source.[Id])
@@ -29,9 +29,9 @@ merge [dbo].[RequestStatus] as target
   using 
     ( 
       values     
-      ( 1, N'New' ),
-      ( 2, N'InProgress' ),
-      ( 3, N'Resolved' )
+      ( 1, N'Nowy' ),
+      ( 2, N'Otwarty' ),
+      ( 3, N'Zamkniety' )
     )
     as source (Id, Name)
   on (target.[Id] = source.[Id])
@@ -44,9 +44,9 @@ merge [dbo].[RequestStatus] as target
   using 
     ( 
       values     
-      ( 1, N'Change' ),
-      ( 2, N'Bug' ),
-      ( 3, N'Critical' )
+      ( 1, N'Pytanie' ),
+      ( 2, N'Problem' ),
+      ( 3, N'Awaria' )
     )
     as source (Id, Name)
   on (target.[Id] = source.[Id])

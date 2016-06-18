@@ -1,0 +1,59 @@
+﻿@using SimpleDb.DataAccess.Enities
+@model SimpleDb.Models.RequestAdd
+
+@{
+  ViewBag.Title = "Dodaj zgłoszenie";
+}
+
+<h2>Dodaj zgłoszenie</h2>
+
+@using (Html.BeginForm("Adding", "Request"))
+{
+  @Html.AntiForgeryToken()
+
+  <div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+      @Html.LabelFor(model => model.ClientSymbol, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+        @Html.TextBoxFor(model => model.ClientSymbol, new { @class = "form-control", @readonly = "readonly" })
+        @Html.ValidationMessageFor(model => model.ClientSymbol, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group">
+      @Html.LabelFor(model => model.RequestType, htmlAttributes: new {@class = "control-label col-md-2"})
+      <div class="col-md-10">
+        @Html.DropDownListFor(model => model.RequestType, EnumHelper.GetSelectList(typeof(RequestType)), new {@class = "form-control"})
+        @Html.ValidationMessageFor(model => model.RequestType, "", new {@class = "text-danger"})
+      </div>
+    </div>
+
+    <div class="form-group">
+      @Html.LabelFor(model => model.RequestPriority, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+        @Html.DropDownListFor(model => model.RequestPriority, EnumHelper.GetSelectList(typeof(RequestPriority)), new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RequestType, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group">
+      @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+        @Html.TextAreaFor(model => model.Description, htmlAttributes: new { @class = "form-control", rows = "6", cols = "10" })
+        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Dodaj" class="btn btn-default" />
+      </div>
+    </div>
+  </div>
+}
+
+<div>
+  @Html.ActionLink("Wróć do listy", "Index", "Clients")
+</div>
