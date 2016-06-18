@@ -72,4 +72,7 @@
   <ItemGroup>
     <None Include="SimpleDb.Database.publish.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
 </Project>
