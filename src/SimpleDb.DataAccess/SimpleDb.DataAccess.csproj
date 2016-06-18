@@ -57,6 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enities\Employee.cs" />
+    <Compile Include="Enities\Request.cs" />
+    <Compile Include="Enities\RequestPriority.cs" />
+    <Compile Include="Enities\RequestStatus.cs" />
+    <Compile Include="Enities\RequestType.cs" />
     <Compile Include="ResuestServiceContext.cs" />
     <Compile Include="Enities\Client.cs" />
     <Compile Include="Enities\ClientAddress.cs" />

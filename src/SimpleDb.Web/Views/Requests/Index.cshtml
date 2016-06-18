@@ -1,0 +1,51 @@
+﻿@model List<SimpleDb.Models.RequestForList>
+
+@{
+  ViewBag.Title = "Zgłoszenia";
+}
+
+<h2>Zgłoszenia</h2>
+
+<section id="data">
+  <table class="table">
+    <tr>
+      <th>Identyfikator</th>
+      <th>Data</th>
+      <th>Priorytet</th>
+      <th>Rodzaj</th>
+      <th>Status</th>
+      <th>Data rozwiązania</th>
+      <th></th>
+    </tr>
+    @foreach (var request in Model)
+      {
+      <tr>
+        <td>
+          @request.Identifier.ToString("N").ToUpper()
+        </td>
+        <td>
+          @request.Date
+        </td>
+        <td>
+          @request.RequestPriority
+        </td>
+        <td>
+          @request.RequestType
+        </td>
+        <td>
+          @request.RequestStatus
+        </td>
+        <td>
+          @request.ResolveDate
+        </td>
+        <td>
+          <a href="/Request/Edit?identifier=@request.Identifier" class="btn btn-warning">
+            Edytuj zgłoszenia
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          </a>
+        </td>
+      </tr>
+    }
+  </table>
+</section>
+

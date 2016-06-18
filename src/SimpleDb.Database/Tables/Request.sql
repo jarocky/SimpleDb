@@ -7,8 +7,8 @@
   [Date] datetime not null,
   ResolveDate datetime null,
   ResolveDescription nvarchar(max) null,
-  RequestPriorityId int null,
-  RequestTypeId int null
+  RequestPriorityId int not null,
+  RequestTypeId int not null
 )
 go
 
