@@ -6,7 +6,6 @@
   RequestStatusId int not null,
   [Date] datetime not null,
   ResolveDate datetime null,
-  ResolveDescription nvarchar(max) null,
   RequestPriorityId int not null,
   RequestTypeId int not null
 )

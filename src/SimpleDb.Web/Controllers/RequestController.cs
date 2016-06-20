@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using SimpleDb.DataAccess;
 using SimpleDb.DataAccess.Enities;
@@ -36,6 +37,20 @@ namespace SimpleDb.Controllers
       using (var ctx = new ResuestServiceContext())
       {
         ctx.Requests.Add(request);
+        ctx.SaveChanges();
+      }
+
+      return RedirectToAction("Index", "Requests");
+    }
+
+    [HttpGet]
+    public ActionResult Closing(Guid id)
+    {
+      using (var ctx = new ResuestServiceContext())
+      {
+        var request = ctx.Requests.SingleOrDefault(r => r.Id == id);
+        request.RequestStatus = RequestStatus.Zamkniety;
+        request.ResolveDate = DateTime.Now;
         ctx.SaveChanges();
       }
 

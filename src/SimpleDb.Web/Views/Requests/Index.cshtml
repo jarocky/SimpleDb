@@ -17,9 +17,10 @@
       <th>Status</th>
       <th>Data rozwiązania</th>
       <th></th>
+      <th></th>
     </tr>
     @foreach (var request in Model)
-      {
+    {
       <tr>
         <td>
           @request.Identifier.ToString("N").ToUpper()
@@ -42,12 +43,26 @@
         <td>
           @request.ResolveDate
         </td>
-        <td>
-          <a href="/Request/Edit?identifier=@request.Identifier" class="btn btn-warning">
-            Edytuj zgłoszenia
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          </a>
-        </td>
+        @if (!request.ResolveDate.HasValue)
+        {
+          <td>
+            <a href="/Request/Assign?id=@request.Identifier" class="btn btn-warning">
+              Przypisz pracowników
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </a>
+          </td>
+          <td>
+            <a href="/Request/Closing?id=@request.Identifier" class="btn btn-warning">
+              Zamknij
+              <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+            </a>
+          </td>
+        }
+        else
+        {
+          <td></td>
+          <td></td>
+        }
       </tr>
     }
   </table>

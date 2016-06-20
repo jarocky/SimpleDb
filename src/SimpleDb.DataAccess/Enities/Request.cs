@@ -20,8 +20,6 @@ namespace SimpleDb.DataAccess.Enities
 
     public DateTime? ResolveDate { get; set; }
 
-    public string ResolveDescription { get; set; }
-
     [Column("RequestPriorityId")]
     public RequestPriority RequestPriority { get; set; }
 
