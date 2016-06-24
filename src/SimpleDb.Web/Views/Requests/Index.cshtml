@@ -46,13 +46,13 @@
         @if (!request.ResolveDate.HasValue)
         {
           <td>
-            <a href="/Request/Assign?id=@request.Identifier" class="btn btn-warning">
+            <a href="/Request/Assign?id=@request.Identifier" class="btn btn-default">
               Przypisz pracowników
               <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             </a>
           </td>
           <td>
-            <a href="/Request/Closing?id=@request.Identifier" class="btn btn-warning">
+            <a href="/Request/Closing?id=@request.Identifier" class="btn btn-default">
               Zamknij
               <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
             </a>
