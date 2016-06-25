@@ -1,0 +1,41 @@
+﻿@using System.Linq
+@model SimpleDb.Models.RequestEmployeesModel
+
+@{
+  ViewBag.Title = "Przypisz pracowników";
+}
+
+<h2>Przypisz pracowników</h2>
+
+@using (Html.BeginForm("Assigning", "Request"))
+{
+  @Html.AntiForgeryToken()
+  <section id="data">
+    @Html.HiddenFor(model => model.RequestId)
+    <table class="table">
+      <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th></th>
+      </tr>
+      @for (var i = 0; i < Model.Employees.Count(); i++)
+      {
+        @Html.HiddenFor(model => model.Employees[i].Identifier)
+        <tr>
+          <td>
+            @Model.Employees[i].FirstName
+          </td>
+          <td>
+            @Model.Employees[i].LastName
+          </td>
+          <td>
+            @Html.CheckBoxFor(model => model.Employees[i].IsAssigned)
+          </td>
+        </tr>
+      }
+    </table>
+    <p>
+      <input type="submit" value="Zapisz" class="btn btn-default"/>
+    </p>
+  </section>
+}

@@ -13,5 +13,7 @@ namespace SimpleDb.Models
 
     [DisplayName("Nazwisko")]
     public string LastName { get; set; }
+
+    public bool IsAssigned { get; set; }
   }
 }

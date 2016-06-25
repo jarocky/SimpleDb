@@ -3,7 +3,7 @@ using SimpleDb.DataAccess.Enities;
 
 namespace SimpleDb.Models
 {
-  public class RequestForList
+  public class RequestForListModel
   {
     public Guid Identifier { get; set; }
 

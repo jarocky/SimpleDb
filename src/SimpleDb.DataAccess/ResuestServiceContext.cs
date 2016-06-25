@@ -18,6 +18,8 @@ namespace SimpleDb.DataAccess
 
     public DbSet<Request> Requests { get; set; }
 
+    public DbSet<EmployeeRequest> EmployeeRequests { get; set; }
+
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
       modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

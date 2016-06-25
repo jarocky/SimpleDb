@@ -11,11 +11,11 @@ namespace SimpleDb.Controllers
     [HttpGet]
     public ActionResult Index()
     {
-      List<RequestForList> requests = null;
+      List<RequestForListModel> requests = null;
       using (var ctx = new ResuestServiceContext())
       {
         requests = ctx.Requests
-          .Join(ctx.Clients, r => r.ClientSymbol, c => c.Symbol, (r, c) => new RequestForList
+          .Join(ctx.Clients, r => r.ClientSymbol, c => c.Symbol, (r, c) => new RequestForListModel
           {
             Identifier = r.Id,
             ClientName = c.Name,

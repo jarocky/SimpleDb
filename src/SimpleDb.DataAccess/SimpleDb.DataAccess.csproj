@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enities\Employee.cs" />
+    <Compile Include="Enities\EmployeeRequest.cs" />
     <Compile Include="Enities\Request.cs" />
     <Compile Include="Enities\RequestPriority.cs" />
     <Compile Include="Enities\RequestStatus.cs" />

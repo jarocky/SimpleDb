@@ -3,7 +3,7 @@ using SimpleDb.DataAccess.Enities;
 
 namespace SimpleDb.Models
 {
-  public class RequestAdd
+  public class RequestAddModel
   {
     [DisplayName("Symbol Klienta")]
     public string ClientSymbol { get; set; }
