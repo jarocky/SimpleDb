@@ -18,6 +18,7 @@
       <th>Data rozwiązania</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
     @foreach (var request in Model)
     {
@@ -55,6 +56,12 @@
             <a href="/Request/Closing?id=@request.Identifier" class="btn btn-default">
               Zamknij
               <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+            </a>
+          </td>
+          <td>
+            <a href="/Request/Preview?id=@request.Identifier" class="btn btn-default">
+              Podglądnij
+              <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
             </a>
           </td>
         }

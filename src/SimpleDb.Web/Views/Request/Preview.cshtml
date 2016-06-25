@@ -1,0 +1,69 @@
+﻿@model SimpleDb.Models.RequestPreviewModel
+
+@{
+  ViewBag.Title = "Podgląd zgłoszenia";
+}
+
+<h2>Podgląd zgłoszenia</h2>
+
+<div>
+  <dl class="dl-horizontal">
+    <dt>
+      @Html.DisplayNameFor(model => model.ClientSymbol)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.ClientSymbol)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.RequestPriority)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.RequestPriority)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.RequestType)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.RequestType)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.Description)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.Description)
+    </dd>
+
+  </dl>
+</div>
+<table class="table">
+  <tr>
+    <th>Identyfikator</th>
+    <th>Imię</th>
+    <th>Nazwisko</th>
+  </tr>
+  @foreach (var employee in Model.Employees)
+      {
+    <tr>
+      <td>
+        @employee.Identifier.ToString("N").ToUpper()
+      </td>
+      <td>
+        @employee.FirstName
+      </td>
+      <td>
+        @employee.LastName
+      </td>
+    </tr>
+  }
+</table>
+
+<p>
+  @Html.ActionLink("Wróć do listy", "Index", "Requests")
+</p>

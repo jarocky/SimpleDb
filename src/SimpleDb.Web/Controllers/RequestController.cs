@@ -99,5 +99,38 @@ namespace SimpleDb.Controllers
 
       return RedirectToAction("Index", "Requests");
     }
+
+    [HttpGet]
+    public ActionResult Preview(Guid id)
+    {
+      RequestPreviewModel request = null;
+      using (var ctx = new ResuestServiceContext())
+      {
+        request = ctx.Requests
+          .Join(ctx.Clients, r => r.ClientSymbol, c => c.Symbol, (r, c) => new RequestPreviewModel
+          {
+            Id = r.Id,
+            ClientSymbol = c.Symbol,
+            RequestPriority = r.RequestPriority,
+            RequestType = r.RequestType,
+            Description = r.Description
+          }).SingleOrDefault(r => r.Id == id);
+        request.Employees = ctx.EmployeeRequests
+          .Join(ctx.Employees, er => er.EmployeeIdentifier, r => r.Identifier, (er, r) => new
+          {
+            RequestId = er.RequestId,
+            Identifier = r.Identifier,
+            FirstName = r.FirstName,
+            LastName = r.LastName
+          }).Where(er => er.RequestId == id).Select(er => new EmployeeModel
+          {
+            Identifier = er.Identifier,
+            FirstName = er.FirstName,
+            LastName = er.LastName
+          }).ToList();
+      }
+
+      return View(request);
+    }
   }
 }

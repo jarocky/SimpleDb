@@ -132,6 +132,7 @@
     <Compile Include="Models\RequestAddModel.cs" />
     <Compile Include="Models\RequestEmployeesModel.cs" />
     <Compile Include="Models\RequestForListModel.cs" />
+    <Compile Include="Models\RequestPreviewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <Content Include="Views\Requests\Index.cshtml" />
     <Content Include="Views\Request\Add.cshtml" />
     <Content Include="Views\Request\Assign.cshtml" />
+    <Content Include="Views\Request\Preview.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
