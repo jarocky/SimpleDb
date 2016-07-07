@@ -10,14 +10,21 @@ namespace SimpleDb.Controllers
   public class EmployeeController : Controller
   {
     [HttpGet]
-    public ActionResult Add()
+    public ActionResult Add(EmployeeModel employeeModel)
     {
-      return View();
+      employeeModel = employeeModel ?? new EmployeeModel();
+
+      return View(employeeModel);
     }
 
     [HttpPost]
     public ActionResult Adding(EmployeeModel employeeModel)
     {
+      if (!ModelState.IsValid)
+      {
+        return Add(employeeModel);
+      }
+
       var employee = new Employee
       {
         Identifier = Guid.NewGuid(),
@@ -54,8 +61,24 @@ namespace SimpleDb.Controllers
     }
 
     [HttpPost]
+    public ActionResult Edit(EmployeeModel employeeModel)
+    {
+      if (employeeModel == null)
+      {
+        return RedirectToAction("Index", "Employees");
+      }
+
+      return View(employeeModel);
+    }
+
+    [HttpPost]
     public ActionResult Editing(EmployeeModel employeeModel)
     {
+      if (!ModelState.IsValid)
+      {
+        return Edit(employeeModel);
+      }
+
       using (var ctx = new ResuestServiceContext())
       {
         var employee = ctx.Employees.SingleOrDefault(x => x.Identifier == employeeModel.Identifier);
